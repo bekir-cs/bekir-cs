@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uygulama Yönlendirme</title>
+    <script>
+        function yonlendir() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            var isMac = navigator.platform.toUpperCase().indexOf('MAC')>=0;
+            
+            // iOS kontrolü
+            if ((/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) || isMac) {
+                window.location = "https://apps.apple.com/app/apple-store/id6449986515?pt=126264760&ct=github&mt=8";
+                return;
+            }
+            // Android veya diğer cihazlar için
+            window.location = "https://play.google.com/store/apps/details?id=com.neogpt.english.grammar";
+        }
+    </script>
+</head>
+<body onload="yonlendir()">
+    <p>Yönlendiriliyorsunuz...</p>
+</body>
+</html>
